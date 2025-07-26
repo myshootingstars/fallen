@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
@@ -38,11 +37,14 @@ header .title-box {
   background: #f5e9d3;
   position: relative;
   box-shadow: inset 2px 2px 0 #7b5e2e;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 header h1 {
   font-size: 1.2rem;
   margin: 0;
+  flex-basis: 100%;
 }
 
 .star.big {
