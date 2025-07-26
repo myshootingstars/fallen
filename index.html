@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>shooting stars</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-box">
+        <span class="star big">✦</span>
+        <h1>shooting stars</h1>
+        <span class="star big">✦</span>
+      </div>
+    </header>
+    <nav>
+      <button class="active" data-entry="0">★</button>
+      <button data-entry="1">one</button>
+      <button data-entry="2">two</button>
+      <button data-entry="3">three</button>
+    </nav>
+    <main id="entry-content">
+      from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...
+    </main>
+  </div>
+
+<script>
+  const entries = [
+    `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
+    `this is entry one, a place to jot down thoughts and memories, a little star shining on my path.`,
+    `entry two here. every little note is a step, a flicker in my sky of memories.`,
+    `third entry shining through, more stars to catch and hold close forever.`
+  ];
+
+  const buttons = document.querySelectorAll('nav button');
+  const content = document.getElementById('entry-content');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      content.textContent = entries[btn.getAttribute('data-entry')];
+    });
+  });
+</script>
+</body>
+</html>
