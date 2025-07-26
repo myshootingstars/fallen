@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>shooting stars</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>shooting stars</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
@@ -20,32 +21,30 @@
       <button data-entry="1">one</button>
       <button data-entry="2">two</button>
       <button data-entry="3">three</button>
-      <button data-entry="4">...</button>
     </nav>
     <main id="entry-content">
       from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...
     </main>
   </div>
 
-  <script>
-    const entries = [
-      `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
-      `<b>home</b><br><br>this might sound weird but home never really felt like home. it was merely a house. warmth, love, freedom, privacy. i never associated such words with it. and a lot of the times leaving felt like an escape, but i knew i'd come back. it was temporary, while that feeling was never gone.<br><br>all my life i've been waiting. "eventually that string will wear out, break". but it never did. and it feels like it never will...`,
-      `entry two here. every little note is a step, a flicker in my sky of memories.`,
-      `third entry shining through, more stars to catch and hold close forever.`,
-      `there's a star falling! can u see it? make sure to hold it tight...`
-    ];
+<script>
+  const entries = [
+    `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
+    `this is entry one, a place to jot down thoughts and memories, a little star shining on my path.`,
+    `entry two here. every little note is a step, a flicker in my sky of memories.`,
+    `third entry shining through, more stars to catch and hold close forever.`
+  ];
 
-    const buttons = document.querySelectorAll('nav button');
-    const content = document.getElementById('entry-content');
+  const buttons = document.querySelectorAll('nav button');
+  const content = document.getElementById('entry-content');
 
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        content.innerHTML = entries[btn.getAttribute('data-entry')];
-      });
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      content.textContent = entries[btn.getAttribute('data-entry')];
     });
-  </script>
+  });
+</script>
 </body>
 </html>
