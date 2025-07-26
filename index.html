@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>shooting stars</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>shooting stars</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
@@ -27,26 +27,25 @@
     </main>
   </div>
 
-<script>
-  const entries = [
-    `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
-    `<b>home</b><br><br>this might sound weird but home never really felt like home. it was merely a house. warmth, love, freedom, privacy. i never associated such words with it. and a lot of the times leaving felt like an escape, but i knew i'd come back. it was temporary, while that feeling was never gone. it's as if there's an invisible string tying me back, pulling me in. wherever i am, no matter how far, it's still there.<br><br>all my life i've been waiting. "eventually that string will wear out, break". but it never did. and it feels like it never will, though if it somehow splits in two, it's going to take time. a lot of it, but that’s ok. i've come to terms with the fact that healing is a time-consuming process, sometimes painful. which is ironic, yet understandable. the thing is you never stop healing and in order to grow you might face challenges and it's how you handle them that allows you to do so. time itself won't do anything. it really is up to you.`,
-    `entry two here. every little note is a step, a flicker in my sky of memories.`,
-    `third entry shining through, more stars to catch and hold close forever.`,
-    `there's a star falling! can u see it? make sure to hold it tight...`
-  ];
+  <script>
+    const entries = [
+      `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
+      `<b>home</b><br><br>this might sound weird but home never really felt like home. it was merely a house. warmth, love, freedom, privacy. i never associated such words with it. and a lot of the times leaving felt like an escape, but i knew i'd come back. it was temporary, while that feeling was never gone.<br><br>all my life i've been waiting. "eventually that string will wear out, break". but it never did. and it feels like it never will...`,
+      `entry two here. every little note is a step, a flicker in my sky of memories.`,
+      `third entry shining through, more stars to catch and hold close forever.`,
+      `there's a star falling! can u see it? make sure to hold it tight...`
+    ];
 
-  const buttons = document.querySelectorAll('nav button');
-  const content = document.getElementById('entry-content');
+    const buttons = document.querySelectorAll('nav button');
+    const content = document.getElementById('entry-content');
 
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      content.innerHTML = entries[btn.getAttribute('data-entry')];
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        content.innerHTML = entries[btn.getAttribute('data-entry')];
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
-
