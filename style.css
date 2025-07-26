@@ -37,8 +37,7 @@ header .title-box {
   background: #f5e9d3;
   position: relative;
   box-shadow: inset 2px 2px 0 #7b5e2e;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+  text-align: center;
 }
 
 header h1 {
@@ -88,20 +87,24 @@ main {
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 0.9rem;
-  }
-  .star.big {
-    font-size: 1.2rem;
-  }
   .container {
     padding: 1.5rem 0.8rem 2rem;
   }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
   nav button {
     font-size: 0.65rem;
     padding: 0.4rem 0.8rem;
   }
+
   main {
     font-size: 0.75rem;
+  }
+
+  header .title-box {
+    flex-wrap: nowrap;
   }
 }
