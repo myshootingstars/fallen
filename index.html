@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +20,7 @@
       <button data-entry="1">one</button>
       <button data-entry="2">two</button>
       <button data-entry="3">three</button>
+      <button data-entry="4">…</button>
     </nav>
     <main id="entry-content">
       from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...
@@ -30,9 +30,10 @@
 <script>
   const entries = [
     `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
-    `this is entry one, a place to jot down thoughts and memories, a little star shining on my path.`,
+    `<b>home</b><br><br>this might sound weird but home never really felt like home. it was merely a house. warmth, love, freedom, privacy. i never associated such words with it. and a lot of the times leaving felt like an escape, but i knew i'd come back. it was temporary, while that feeling was never gone. it's as if there's an invisible string tying me back, pulling me in. wherever i am, no matter how far, it's still there.<br><br>all my life i've been waiting. "eventually that string will wear out, break". but it never did. and it feels like it never will, though if it somehow splits in two, it's going to take time. a lot of it, but that’s ok. i've come to terms with the fact that healing is a time-consuming process, sometimes painful. which is ironic, yet understandable. the thing is you never stop healing and in order to grow you might face challenges and it's how you handle them that allows you to do so. time itself won't do anything.<br><br>it really is up to you.`,
     `entry two here. every little note is a step, a flicker in my sky of memories.`,
-    `third entry shining through, more stars to catch and hold close forever.`
+    `third entry shining through, more stars to catch and hold close forever.`,
+    `another star is falling! can you see it? make sure to hold it tight…`
   ];
 
   const buttons = document.querySelectorAll('nav button');
@@ -42,7 +43,7 @@
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      content.textContent = entries[btn.getAttribute('data-entry')];
+      content.innerHTML = entries[btn.getAttribute('data-entry')];
     });
   });
 </script>
