@@ -1,59 +1,52 @@
-body {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-    background-image: url('custom_pixel_background.png');
-    background-size: 200px;
-    color: #5c4033;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>shooting stars</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-box">
+        <span class="star big">✦</span>
+        <h1>shooting stars</h1>
+        <span class="star big">✦</span>
+      </div>
+    </header>
+    <nav>
+      <button class="active" data-entry="0">★</button>
+      <button data-entry="1">one</button>
+      <button data-entry="2">two</button>
+      <button data-entry="3">three</button>
+      <button data-entry="4">...</button>
+    </nav>
+    <main id="entry-content">
+      from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...
+    </main>
+  </div>
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
+<script>
+  const entries = [
+    `from now on this is where i'll keep all the shooting stars that once shone bright. it feels exciting to be able to hold on to them forever and have a space just for myself...`,
+    `<b>home</b><br><br>this might sound weird but home never really felt like home. it was merely a house. warmth, love, freedom, privacy. i never associated such words with it. and a lot of the times leaving felt like an escape, but i knew i'd come back. it was temporary, while that feeling was never gone. it's as if there's an invisible string tying me back, pulling me in. wherever i am, no matter how far, it's still there.<br><br>all my life i've been waiting. "eventually that string will wear out, break". but it never did. and it feels like it never will, though if it somehow splits in two, it's going to take time. a lot of it, but that’s ok. i've come to terms with the fact that healing is a time-consuming process, sometimes painful. which is ironic, yet understandable. the thing is you never stop healing and in order to grow you might face challenges and it's how you handle them that allows you to do so. time itself won't do anything. it really is up to you.`,
+    `entry two here. every little note is a step, a flicker in my sky of memories.`,
+    `third entry shining through, more stars to catch and hold close forever.`,
+    `there's a star falling! can u see it? make sure to hold it tight...`
+  ];
 
-header .title-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
+  const buttons = document.querySelectorAll('nav button');
+  const content = document.getElementById('entry-content');
 
-header h1 {
-    margin: 0 10px;
-    font-weight: normal;
-    font-size: 2rem;
-}
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      content.innerHTML = entries[btn.getAttribute('data-entry')];
+    });
+  });
+</script>
+</body>
+</html>
 
-.star.big {
-    font-size: 1.5rem;
-}
-
-nav {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-nav button {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    margin: 0 5px;
-    cursor: pointer;
-    color: #5c4033;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav button.active {
-    background-color: #e5d5b0;
-    color: #5c4033;
-    font-weight: bold;
-}
-
-main {
-    font-size: 1rem;
-    line-height: 1.6;
-    white-space: pre-wrap;
-}
